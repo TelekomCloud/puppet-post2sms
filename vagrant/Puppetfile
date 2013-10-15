@@ -1,0 +1,6 @@
+forge "http://forge.puppetlabs.com"
+
+#mod "jfryman/nginx"
+mod "nginx",
+  :git => "git://github.com/TelekomCloud/puppet-nginx.git",
+  :ref => "feature/set_proxy_method_and_body"

@@ -1,0 +1,6 @@
+name    'post2sms'
+version '0.0'
+author  'arlimus'
+license 'Apache 2.0'
+summary 'Convert POST requests to SOAP calls for sending SMS'
+description 'Convert POST requests to SOAP calls for sending SMS'

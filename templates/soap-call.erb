@@ -1,0 +1,22 @@
+<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tom="http://planb.de/TOMessage" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tom:sendMessage soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <appid xsi:type="xsd:string"><%= appid %></appid>
+         <appsec xsi:type="xsd:string"><%= appsec %></appsec>
+         <accounting_data xsi:type="tom:AccountingData" xmlns:tom="http://planb.de/TOMessage-Schema">
+            <pmi_key xsi:type="xsd:string"><%= pmi_key %></pmi_key>
+            <guid xsi:type="xsd:string"><%= guid %></guid>
+            <anid xsi:type="xsd:string"><%= anid %></anid>
+            <eventdescription xsi:type="xsd:string">Nagios Alert</eventdescription>
+         </accounting_data>
+         <message_data xsi:type="tom:MessageData" xmlns:tom="http://planb.de/TOMessage-Schema">
+            <msisdn xsi:type="xsd:string"><%= number %></msisdn>
+             <!--Zero or more repetitions:-->
+               <item xsi:type="xsd:string">1</item>
+               <content_type xsi:type="xsd:string">x-sms-text/email-notification</content_type>
+            <content_data xsi:type="xsd:base64Binary"><%= message %></content_data>
+         </message_data>
+      </tom:sendMessage>
+   </soapenv:Body>
+</soapenv:Envelope>
