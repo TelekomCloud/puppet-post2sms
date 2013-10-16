@@ -29,3 +29,13 @@ Issue a POST request to the proxy (for Vagrant: on the host):
     curl 'localhost:8080/?name=luke&number=0012321' -d "the force is throwing alarms"
 
 Look at your listener, it will have captured the request.
+
+## .Vagrant
+
+In order to bring up the vagrant test environment, you will need [librarian-puppet](https://github.com/rodjek/librarian-puppet) installed on your system.
+
+Then you can simply:
+
+    cd vagrant/
+    librarian-puppet install
+    vagrant up
