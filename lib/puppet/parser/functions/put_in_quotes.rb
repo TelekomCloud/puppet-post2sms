@@ -17,6 +17,6 @@ module Puppet::Parser::Functions
     raise(Puppet::ParseError, 'put_in_quotes(): Requires string to work ' +
       'with')  unless value.is_a?(String)
 
-    return '"' + value.gsub('\\','\\\\\\\\').gsub('"','\"') + '"'
+    '"' + value.gsub('\\','\\\\\\\\').gsub('"','\"') + '"'
   end
 end
